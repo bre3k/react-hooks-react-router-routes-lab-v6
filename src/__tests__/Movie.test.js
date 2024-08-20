@@ -28,9 +28,8 @@ test("renders movie's title in an h1", async () => {
 
 test("renders movie's time within a p tag", async () => {
   render(<RouterProvider router={router} />);
-  const p = await screen.findByText(/115/);
-  expect(p).toBeInTheDocument();
-  expect(p.tagName).toBe("P");
+  expect((await screen.findByText(/115/))).toBeInTheDocument();
+  expect((await screen.findByText(/115/)).tagName).toBe("P");
 });
 
 test("renders a span for each genre",  () => {
